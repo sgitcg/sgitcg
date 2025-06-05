@@ -101,11 +101,8 @@ I am passionate about code with a passion for building great products and solvin
 
 ## 📫 How to reach me
 
-- 💼 **LinkedIn**: [Sebastian Gorr](https://linkedin.com/in/sebastiangorr)
-- 🐦 **Twitter**: [@sebastiangorr_dev](https://twitter.com/sebastiangorr_dev)
-- 📧 **Email**: sebastian.gorr@it-consulting-gorr.com
-- 🌐 **Website**: [sebastiangorr.dev](https://sebastiangorr.dev)
-- 📝 **Blog**: [blog.sebastiangorr.dev](https://blog.sebastiangorr.dev)
+- 📧 **Email**: info@itcg.online
+- 🌐 **Website**: [IT-Consulting Gorr](https://itcg.online)
 
 ---
 
