@@ -1,0 +1,47 @@
+name: Backup Tests Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+    # Allows manual triggering of the workflow
+    inputs:
+      test_type:
+        description: 'Specify the type of test to run'
+        required: false
+        default: 'backup'
+
+jobs:
+  backup_tests:
+    name: Run Backup Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Ensure backup directory exists
+        run: mkdir -p storage/backups
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
+      - name: Validate Composer
+        run: composer validate --strict
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Run Backup Tests
+        run: php tools/backup_tests.php
+
+      - name: Show backup directory contents (for debugging)
+        run: ls -l storage/backups
